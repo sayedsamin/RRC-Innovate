@@ -1,0 +1,84 @@
+{
+  "trust-score": {
+    "title": "Avg Content Trust Score",
+    "value": "98%",
+    "trend": "up",
+    "trendValue": "Wait 2% (Last 30 days)",
+    "description": "A high trust score means AI responses are grounded in verified, authoritative documents, reducing the risk of hallucinations.",
+    "breakdown": [
+      { "label": "Multi-source Validated", "value": 55, "color": "bg-green-500" },
+      { "label": "Single Trusted Source", "value": 27, "color": "bg-blue-500" },
+      { "label": "Needs Review", "value": 18, "color": "bg-yellow-500" }
+    ],
+    "evidence": [
+      { "title": "AI Governance in Insurance", "source": "Gartner" },
+      { "title": "Microsoft Copilot Security Update", "source": "Microsoft" },
+      { "title": "Internal Compliance Memo Q3", "source": "Legal Dept" }
+    ],
+    "impact": [
+      "Consulting (High Relevance)",
+      "Engineering (Medium Relevance)",
+      "HR (Critical Importance)"
+    ],
+    "actions": [
+      "Review flagged content items",
+      "Share trust report with Sponsors",
+      "Enable stricter validation mode"
+    ],
+    "confidence": "Data freshness: Real-time. Based on verified external sources only."
+  },
+  "relevance": {
+    "title": "Role-Relevant Content Coverage",
+    "value": "92%",
+    "trend": "up",
+    "trendValue": "Fresh (Last 30 days)",
+    "description": "Ensures that the knowledge base evolves with the team's needs, preventing information rot and maintaining high utility.",
+    "breakdown": [
+      { "label": "Highly Relevant", "value": 70, "color": "bg-emerald-500" },
+      { "label": "Moderately Relevant", "value": 20, "color": "bg-teal-500" },
+      { "label": "Stale / Archived", "value": 10, "color": "bg-gray-400" }
+    ],
+    "evidence": [
+      { "title": "New Sales Playbook 2026", "source": "Sales Enablement" },
+      { "title": "Q4 Engineering Roadmap", "source": "Jira" }
+    ],
+    "impact": [
+      "Sales (High Freshness)",
+      "Marketing (High Freshness)",
+      "Operations (Stable)"
+    ],
+    "actions": [
+      "Archive 35 stale documents",
+      "Update role mappings",
+      "Trigger content audit"
+    ],
+    "confidence": "Based on access logs and user feedback ratings."
+  },
+  "adoption": {
+    "title": "Avg Time Saved per User",
+    "value": "2.5h",
+    "trend": "up",
+    "trendValue": "Weekly Average",
+    "description": "This metric quantifies the productivity gain from using the KMS vs. traditional manual search methods.",
+    "breakdown": [
+      { "label": "Search Time Reduced", "value": 60, "color": "bg-purple-500" },
+      { "label": "Drafting Assistance", "value": 30, "color": "bg-pink-500" },
+      { "label": "Information Synthesis", "value": 10, "color": "bg-indigo-500" }
+    ],
+    "evidence": [
+      { "title": "User Feedback Survey Q3", "source": "Internal" },
+      { "title": "System Usage Logs", "source": "Analytics" }
+    ],
+    "impact": [
+      "Legal (Max Savings)",
+      "Research (High Savings)",
+      "Admin (Moderate Savings)"
+    ],
+    "actions": [
+      "Promote 'Power User' features",
+      "Run training session for low adoption groups",
+      "Celebrated top contributors"
+    ],
+    "confidence": "Calculated based on session interaction time vs. baseline."
+  }
+}
