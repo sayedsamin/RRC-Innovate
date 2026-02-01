@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as RolesRouteImport } from './routes/roles'
 import { Route as BrowseRouteImport } from './routes/browse'
+import { Route as AssessmentRouteImport } from './routes/assessment'
 import { Route as AskRouteImport } from './routes/ask'
 import { Route as AiPicksRouteImport } from './routes/ai-picks'
 import { Route as IndexRouteImport } from './routes/index'
@@ -24,6 +25,11 @@ const RolesRoute = RolesRouteImport.update({
 const BrowseRoute = BrowseRouteImport.update({
   id: '/browse',
   path: '/browse',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AssessmentRoute = AssessmentRouteImport.update({
+  id: '/assessment',
+  path: '/assessment',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AskRoute = AskRouteImport.update({
@@ -51,6 +57,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/ai-picks': typeof AiPicksRoute
   '/ask': typeof AskRoute
+  '/assessment': typeof AssessmentRoute
   '/browse': typeof BrowseRoute
   '/roles': typeof RolesRoute
   '/article/$articleId': typeof ArticleArticleIdRoute
@@ -59,6 +66,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/ai-picks': typeof AiPicksRoute
   '/ask': typeof AskRoute
+  '/assessment': typeof AssessmentRoute
   '/browse': typeof BrowseRoute
   '/roles': typeof RolesRoute
   '/article/$articleId': typeof ArticleArticleIdRoute
@@ -68,6 +76,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/ai-picks': typeof AiPicksRoute
   '/ask': typeof AskRoute
+  '/assessment': typeof AssessmentRoute
   '/browse': typeof BrowseRoute
   '/roles': typeof RolesRoute
   '/article/$articleId': typeof ArticleArticleIdRoute
@@ -78,16 +87,25 @@ export interface FileRouteTypes {
     | '/'
     | '/ai-picks'
     | '/ask'
+    | '/assessment'
     | '/browse'
     | '/roles'
     | '/article/$articleId'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/ai-picks' | '/ask' | '/browse' | '/roles' | '/article/$articleId'
+  to:
+    | '/'
+    | '/ai-picks'
+    | '/ask'
+    | '/assessment'
+    | '/browse'
+    | '/roles'
+    | '/article/$articleId'
   id:
     | '__root__'
     | '/'
     | '/ai-picks'
     | '/ask'
+    | '/assessment'
     | '/browse'
     | '/roles'
     | '/article/$articleId'
@@ -97,6 +115,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AiPicksRoute: typeof AiPicksRoute
   AskRoute: typeof AskRoute
+  AssessmentRoute: typeof AssessmentRoute
   BrowseRoute: typeof BrowseRoute
   RolesRoute: typeof RolesRoute
   ArticleArticleIdRoute: typeof ArticleArticleIdRoute
@@ -116,6 +135,13 @@ declare module '@tanstack/react-router' {
       path: '/browse'
       fullPath: '/browse'
       preLoaderRoute: typeof BrowseRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/assessment': {
+      id: '/assessment'
+      path: '/assessment'
+      fullPath: '/assessment'
+      preLoaderRoute: typeof AssessmentRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/ask': {
@@ -153,6 +179,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AiPicksRoute: AiPicksRoute,
   AskRoute: AskRoute,
+  AssessmentRoute: AssessmentRoute,
   BrowseRoute: BrowseRoute,
   RolesRoute: RolesRoute,
   ArticleArticleIdRoute: ArticleArticleIdRoute,

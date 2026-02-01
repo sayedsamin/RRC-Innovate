@@ -13,6 +13,8 @@ import {
   MessageCircle
 } from 'lucide-react';
 
+import logo from '../../assets/logo.jpeg';
+
 export const Sidebar = ({ 
   isDarkMode, 
   setIsDarkMode, 
@@ -87,7 +89,7 @@ export const Sidebar = ({
       {/* --- LOGO & THEME TOGGLE --- */}
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "24px" }}>
         <div style={{ display: "flex", alignItems: "center", gap: "12px", color: colors.primary, fontSize: "24px", fontWeight: "800" }}>
-          <Brain size={32} />
+          <img src={logo} alt="AI KMS Logo" style={{ width: "32px", height: "32px", borderRadius: "6px", objectFit: "cover" }} />
           <span>AI KMS</span>
         </div>
         <button
@@ -149,12 +151,16 @@ export const Sidebar = ({
         
         {/* --- ACTION BUTTONS --- */}
         <div style={{ marginTop: "auto", display: "flex", flexDirection: "column", gap: "8px" }}>
-          <button 
-            onClick={() => setShowIngestionModal(true)} 
-            style={actionBtnStyle(colors.secondary)}
+          <Link 
+            to="/assessment" 
+            style={{ 
+                ...actionBtnStyle(colors.secondary), 
+                textDecoration: "none", 
+                justifyContent: "center" 
+            }}
           >
             <Brain size={20} /> Content Assessment
-          </button>
+          </Link>
           
           <button 
             onClick={() => setShowCustomizationModal(true)} 

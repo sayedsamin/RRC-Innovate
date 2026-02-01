@@ -1,6 +1,7 @@
 import { Outlet, createRootRoute } from '@tanstack/react-router';
 import { Sidebar } from './-components/Sidebar'; 
 import { useKMS } from '../context/KMSContext'; 
+import IngestionModal from '../features/ingestion';
 
 export const Route = createRootRoute({
   component: RootComponent,
@@ -14,6 +15,7 @@ function RootComponent() {
     currentUser, setCurrentUser, 
     roles,
     setShowIngestionModal, 
+    showIngestionModal, // Added: Need result state to control visibility
     setShowCustomizationModal 
   } = useKMS();
 
@@ -39,6 +41,9 @@ function RootComponent() {
           <Outlet /> 
         </div>
       </main>
+
+      {/* Modals */}
+      {/* IngestionModal removed in favor of /assessment page */}
 
     </div>
   );
