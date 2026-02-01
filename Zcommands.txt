@@ -1,0 +1,1 @@
+npm install @tanstack/react-router @tanstack/router-vite-plugin
